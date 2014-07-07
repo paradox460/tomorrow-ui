@@ -1,0 +1,117 @@
+@import "ui-variables";
+@import "syntax-variables";
+
+@modified-icon-width: 8px;
+@tab-bottom-border-height: 8px;
+
+.tab-bar {
+  height: @tab-height + @tab-top-padding;
+  background: @tool-panel-background-color;
+  box-sizing: border-box;
+
+  &.list-inline {
+    .tab {
+      padding-left: 12px;
+      padding-right: 18px;
+    }
+  }
+
+  .tab {
+    margin-top: @tab-top-padding;
+    height: @tab-height;
+    line-height: @tab-height - 5px;
+    color: @text-color;
+    transition: color .1s ease-in, border-bottom-color 200ms ease-in-out;
+    border-top: 1px solid transparent;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom: 0;
+    border-bottom-color: fade(lighten(@background-color-info, 20%), 90%);
+
+    .title {
+      position: relative;
+      top: 0px;
+    }
+
+    .close-icon {
+      display: block;
+      opacity: 0;
+      right: 8px;
+      transform: translate(0,1px) scale(0.8);
+      transform-origin: 50% 50%;
+      transition: transform 200ms ease, opacity 200ms ease;
+
+      &:hover {
+        color: @text-color-error !important;
+      }
+    }
+
+    &.modified:not(:hover) .close-icon {
+      display: block;
+      right: 12px;
+      top: 11px;
+      width: @modified-icon-width;
+      height: @modified-icon-width;
+      border-width: 2px;
+      border-color: #ced2d4;
+    }
+
+    &:first-child {
+      margin-left: 0px;
+    }
+
+    &:hover {
+      .close-icon {
+        opacity: 1;
+        transform: translate(0,0) scale(1);
+      }
+    }
+  }
+
+  .tab.active {
+    z-index: 10;
+    line-height: @tab-height - 5px;
+    color: @text-color-highlight;
+
+    border-bottom: 2px solid fade(@background-color-info, 70%);
+
+    &[title] {
+      color: @syntax-text-color;
+    }
+
+    .close-icon {
+      line-height: @tab-height -5px;
+      opacity: 1;
+      transform: translate(0,0) scale(1);
+    }
+
+    &[title].modified:not(:hover) .close-icon {
+      border-color: @syntax-text-color;
+    }
+
+    &, &:before {
+      background-color: @input-background-color;
+      height: @tab-height;
+    }
+
+    border-top-color: lighten(@app-background-color, 7%);
+
+    &:not([title]),
+    &:not([title]):before {
+      background-color: @input-background-color;
+    }
+  }
+
+  .tab:not(.active):hover {
+    color: @text-color-highlight;
+  }
+
+  .placeholder {
+    height: @tab-height;
+    background: linear-gradient(@text-color-info + 50%, @text-color-info);
+    &:after {
+      top: @tab-height;
+      background: @text-color-info;
+    }
+  }
+}
