@@ -4,7 +4,7 @@
 .btn-background (@color, @hover-color, @selected-color, @text-color) {
   color: @text-color;
   background-color: @color;
-  border-top: 1px solid lighten(@app-background-color, 7%);
+  border-top: 1px solid lighten(@color, 7%);
   transition: color 0.2s;
 
   &:hover, &:focus {

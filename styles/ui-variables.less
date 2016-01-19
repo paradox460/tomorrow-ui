@@ -1,14 +1,31 @@
 // Colors
 
+@base00: #1d1f21;
+@base01: #282a2e;
+@base02: #373b41;
+@base03: #969896;
+@base04: #b4b7b4;
+@base05: #c5c8c6;
+@base06: #e0e0e0;
+@base07: #ffffff;
+@base08: #cc6666;
+@base09: #de935f;
+@base0A: #f0c674;
+@base0B: #b5bd68;
+@base0C: #8abeb7;
+@base0D: #81a2be;
+@base0E: #b294bb;
+@base0F: #a3685a;
+
 @text-color: #7d868c;
 @text-color-subtle: #484F5A;
 @text-color-highlight: lighten(@text-color, 30%);
 @text-color-selected: lighten(@text-color, 60%);
 
-@text-color-info: #4da4b7;
-@text-color-success: #6ac38a;
-@text-color-warning: #c69a6d;
-@text-color-error: #c45546;
+@text-color-info: @base0D;
+@text-color-success: @base0B;
+@text-color-warning: @base09;
+@text-color-error: @base08;
 
 @text-color-ignored: @text-color-subtle;
 @text-color-added: @text-color-success;
@@ -16,15 +33,15 @@
 @text-color-modified: @text-color-warning;
 @text-color-removed: @text-color-error;
 
-@background-color-info: #41a8ce;
-@background-color-success: #17ca65;
-@background-color-warning: #ffaa2c;
-@background-color-error: #e02b13;
+@background-color-info: darken(@text-color-info,10%);
+@background-color-success: darken(@text-color-success, 10%);
+@background-color-warning: darken(@text-color-warning, 5%);
+@background-color-error: darken(@text-color-error, 10%);
 @background-color-highlight: rgba(255, 255, 255, 0.07);
 @background-color-selected: #343D46;
 
 // The one true bg color
-@app-background-color: #263138;
+@app-background-color: #282a2e;
 
 @base-background-color: lighten(@app-background-color, 4%);
 @base-border-color: rgba(0, 0, 0, 0.5);
@@ -68,8 +85,8 @@
 @ui-site-color-1: @background-color-success; // green
 @ui-site-color-2: @background-color-info; // blue
 @ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: #db2ff4; // purple
-@ui-site-color-5: #f5e11d; // yellow
+@ui-site-color-4: darken(@base0E, 10%); // purple
+@ui-site-color-5: darken(@base0A, 10%); // yellow
 
 @gutter-color: darken(@tab-background-color-active, 1%);
 
@@ -83,7 +100,7 @@
 @component-icon-padding: 5px;
 @component-icon-size: 16px;
 @component-line-height: 25px;
-@component-border-radius: 2px;
+@component-border-radius: 3px;
 
 @tab-height: 33px;
 @tab-top-padding: 4px;
