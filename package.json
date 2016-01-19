@@ -1,19 +1,19 @@
 {
-  "name": "quantum-ui",
+  "name": "tomorrow-ui",
   "theme": "ui",
-  "version": "0.2.2",
-  "description": "Quantum is a simple, flat theme for Atom based around the Tomorrow color scheme.",
+  "version": "0.0.0",
+  "description": "A theme designed to complement tomorrow and base16-tomorrow",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mbullington/quantum-ui"
+    "url": "https://github.com/paradox460/tomorrow-ui"
   },
   "engines": {
     "atom": ">0.50.0"
   },
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/mbullington/quantum-ui/issues"
+    "url": "https://github.com/paradox460/tomorrow-ui/issues"
   },
-  "homepage": "https://github.com/mbullington/quantum-ui"
+  "homepage": "https://github.com/paradox460/tomorrow-ui"
 }
