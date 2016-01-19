@@ -17,6 +17,8 @@ atom-text-editor[mini] {
 }
 
 atom-text-editor::shadow {
+  text-rendering: optimizeLegibility;
+
   .scroll-view {
     padding-left: 0px;
   }
@@ -28,6 +30,10 @@ atom-text-editor::shadow {
 
 atom-text-editor::shadow .gutter {
   border-right: 0;
+
+  .line-number.cursor-line .absolute, .relative.current-line {
+    color: @base0D;
+  }
 }
 
 atom-text-editor[mini].is-focused {
