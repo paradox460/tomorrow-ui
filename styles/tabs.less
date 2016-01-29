@@ -46,16 +46,55 @@
       }
     }
 
-    &.modified:not(:hover) .close-icon {
-      display: block;
-      right: 12px;
-      top: 11px;
-      width: @modified-icon-width;
-      height: @modified-icon-width;
-      border-width: 2px;
-      border-color: #ced2d4;
+    &.modified {
+      &:not(:hover) .close-icon {
+        display: block;
+        right: 12px;
+        top: 11px;
+        width: @modified-icon-width;
+        height: @modified-icon-width;
+        border-width: 2px;
+        border-color: #ced2d4;
+      }
     }
 
+    &.active {
+      z-index: 10;
+      line-height: @tab-height - 5px;
+      color: @text-color-highlight;
+
+      border-bottom: 2px solid fade(@background-color-info, 70%);
+
+      &[title] {
+        color: @syntax-text-color;
+      }
+
+      .close-icon {
+        line-height: @tab-height -5px;
+        opacity: 1;
+        transform: translate(0,0) scale(1);
+      }
+
+      &[title].modified:not(:hover) .close-icon {
+        border-color: @syntax-text-color;
+      }
+
+      &, &:before {
+        background-color: @input-background-color;
+        height: @tab-height;
+      }
+
+      border-top-color: lighten(@app-background-color, 7%);
+
+      &:not([title]),
+      &:not([title]):before {
+        background-color: @input-background-color;
+      }
+    }
+
+    &:not(.active):hover {
+      color: @text-color-highlight;
+    }
     &:first-child {
       margin-left: 0px;
     }
@@ -71,44 +110,6 @@
       color: darken(@text-color, 15%);
     }
 
-  }
-
-  .tab.active {
-    z-index: 10;
-    line-height: @tab-height - 5px;
-    color: @text-color-highlight;
-
-    border-bottom: 2px solid fade(@background-color-info, 70%);
-
-    &[title] {
-      color: @syntax-text-color;
-    }
-
-    .close-icon {
-      line-height: @tab-height -5px;
-      opacity: 1;
-      transform: translate(0,0) scale(1);
-    }
-
-    &[title].modified:not(:hover) .close-icon {
-      border-color: @syntax-text-color;
-    }
-
-    &, &:before {
-      background-color: @input-background-color;
-      height: @tab-height;
-    }
-
-    border-top-color: lighten(@app-background-color, 7%);
-
-    &:not([title]),
-    &:not([title]):before {
-      background-color: @input-background-color;
-    }
-  }
-
-  .tab:not(.active):hover {
-    color: @text-color-highlight;
   }
 
   .placeholder {

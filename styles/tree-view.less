@@ -21,6 +21,12 @@ atom-workspace { // specificity
       }
     }
 
+    .entry::before {
+      background-color: @background-color-selected;
+      margin: 0 5px;
+      border-radius: @component-border-radius;
+    }
+
     .entry.list-item, .header.list-item {
       &:hover {
         color: @text-color-highlight;
