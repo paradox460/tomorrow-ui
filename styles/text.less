@@ -1,18 +1,24 @@
-@import "ui-mixins";
-@import "ui-variables";
+@import 'ui-mixins';
+@import 'ui-variables';
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   line-height: 1em;
-  margin-bottom: 15px
+
+  margin-bottom: 15px;
 }
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.2em; }
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.2em;
+}
 
 p {
   line-height: 1.6;
+
   margin-bottom: 15px;
 }
 
@@ -21,58 +27,80 @@ label {
 }
 
 pre {
-  box-shadow: none;
-  color: @text-color;
-  background: @inset-panel-background-color;
-  border-radius: @component-border-radius;
-  border: none;
   margin: 0;
+
+  color: @text-color;
+  border: none;
+  border-radius: @component-border-radius;
+  background: @inset-panel-background-color;
+  box-shadow: none;
 }
 
 code {
-  .text(highlight);
-  background: @background-color-highlight;
   border-radius: @component-border-radius;
+  background: @background-color-highlight;
+
+  .text(highlight);
 }
 
-.selected { .text(highlight); }
+.selected {
+  .text(highlight);
+}
 
-.text-smaller { font-size: 0.9em; }
+.text-smaller {
+  font-size: .9em;
+}
 
-.text-subtle { .text(subtle); }
-.text-highlight { .text(highlight); }
+.text-subtle {
+  .text(subtle);
+}
+.text-highlight {
+  .text(highlight);
+}
 
-.text-error { .text(error); }
+.text-error {
+  .text(error);
+}
 .text-info {
   .text(info);
-  &:hover { color: @text-color-info; }
+  &:hover {
+    color: @text-color-info;
+  }
 }
 .text-warning {
   .text(warning);
-  &:hover { color: @text-color-warning; }
+  &:hover {
+    color: @text-color-warning;
+  }
 }
 .text-success {
   .text(success);
-  &:hover { color: @text-color-success; }
+  &:hover {
+    color: @text-color-success;
+  }
 }
 
 .highlight {
-  color: @text-color-highlight;
   font-weight: bold;
-  text-shadow: none;
-  background-color: @background-color-highlight;
-  border-radius: @component-border-radius;
+
   padding: 1px 3px;
+
+  color: @text-color-highlight;
+  border-radius: @component-border-radius;
+  background-color: @background-color-highlight;
+  text-shadow: none;
 }
 
 .highlight-color(@name, @color, @text-color) {
   .highlight-@{name} {
-    color: lighten(saturate(@text-color, 0%), 30%);
     font-weight: bold;
-    text-shadow: none;
-    background-color: fadeout(@color, 60%);
-    border-radius: @component-border-radius;
+
     padding: 1px 3px;
+
+    color: lighten(saturate(@text-color, 0%), 30%);
+    border-radius: @component-border-radius;
+    background-color: fadeout(@color, 60%);
+    text-shadow: none;
   }
 }
 .highlight-color(info, @background-color-info, @text-color-info);

@@ -1,10 +1,11 @@
-@import "ui-variables";
-@import "ui-mixins";
+@import 'ui-variables';
+@import 'ui-mixins';
 
 .loading-spinner(@size) {
+  display: block;
+
   width: @size;
   height: @size;
-  display: block;
 
   background-image: url(images/octocat-spinner-128.gif);
   background-repeat: no-repeat;
@@ -39,38 +40,40 @@
 
 progress {
   height: @progress-height;
+
   -webkit-appearance: none;
 }
 
 progress::-webkit-progress-bar {
   height: @progress-height;
-  border-radius: @component-border-radius;
 
-  background-color: #666;
-
-  background-image:
-     -webkit-linear-gradient(-30deg,
-                             transparent 33%, rgba(0, 0, 0, .1) 33%,
-                             rgba(0,0, 0, .1) 66%, transparent 66%),
-     @progress-shine-gradient;
-
-  border-radius: 2px;
-  background-size: 25px @progress-height, 100% 100%, 100% 100%;
   -webkit-animation: animate-stripes 5s linear infinite;
-  animation: animate-stripes 5s linear infinite;
+          animation: animate-stripes 5s linear infinite;
+
+  border-radius: @component-border-radius;
+  border-radius: 2px;
+  background-color: #666;
+  background-image: -webkit-linear-gradient(-30deg,
+  transparent 33%, rgba(0, 0, 0, .1) 33%,
+  rgba(0,0, 0, .1) 66%, transparent 66%),
+  @progress-shine-gradient;
+  background-size: 25px @progress-height, 100% 100%, 100% 100%;
 }
 
 progress::-webkit-progress-value {
   border-radius: @component-border-radius;
-  background-image: @progress-shine-gradient;
   background-color: @background-color-success;
+  background-image: @progress-shine-gradient;
 }
 
 progress[value]::-webkit-progress-bar {
-  background-image: @progress-shine-gradient;
   animation: none;
+
+  background-image: @progress-shine-gradient;
 }
 
 @-webkit-keyframes animate-stripes {
-   100% { background-position: 100px 0px; }
+  100% {
+    background-position: 100px 0;
+  }
 }

@@ -1,12 +1,13 @@
-@import "ui-variables";
-@import "ui-mixins";
+@import 'ui-variables';
+@import 'ui-mixins';
 
 atom-text-editor[mini] {
-  color           : @text-color-highlight;
+  max-height: none;
+  padding-left: @component-padding / 2;
+
+  color: @text-color-highlight;
+  border-radius: @component-border-radius;
   background-color: @input-background-color;
-  border-radius   : @component-border-radius;
-  padding-left    : @component-padding / 2;
-  max-height      : none;
 
   .placeholder-text {
     color: @text-color-subtle;
@@ -21,8 +22,7 @@ atom-text-editor[mini] {
   }
 }
 
-atom-text-editor,
-atom-text-editor::shadow {
+atom-text-editor, atom-text-editor::shadow {
   text-rendering: optimizeLegibility;
 
   .scroll-view {
@@ -36,28 +36,27 @@ atom-text-editor::shadow {
   .gutter {
     border-right: 0;
 
-    .line-number.cursor-line .absolute,
-    .relative.current-line {
+    .line-number.cursor-line .absolute, .relative.current-line {
       color: @base0D;
     }
   }
 
   .highlighted.selection .region {
-    -webkit-animation-name           : highlight;
-    -webkit-animation-duration       : 1s;
+    -webkit-animation-name: highlight;
+    -webkit-animation-duration: 1s;
     -webkit-animation-iteration-count: 1;
   }
 
   .gutter.drop-shadow {
-    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
+    box-shadow: 5px 0 10px rgba(0,0,0,.1);
   }
 }
 
 atom-text-editor[mini].is-focused {
+  transition: background-color .1s;
   .selection .region {
     background-color: lighten(@app-background-color, 5%);
   }
-transition: background-color .1s;
 }
 
 atom-text-editor::shadow .selection .region {

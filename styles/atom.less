@@ -1,4 +1,4 @@
-@import "ui-variables";
+@import 'ui-variables';
 
 * {
   box-sizing: border-box;
@@ -14,15 +14,14 @@ atom-workspace {
     height: 8px;
   }
 
-  /deep/ ::-webkit-scrollbar-track,
-  /deep/ ::-webkit-scrollbar-corner {
+  /deep/ ::-webkit-scrollbar-track, /deep/ ::-webkit-scrollbar-corner {
     background: @scrollbar-background-color;
     box-shadow: none;
   }
 
   /deep/ ::-webkit-scrollbar-thumb {
-    background: @scrollbar-color;
     border-radius: 5px;
+    background: @scrollbar-color;
     box-shadow: none;
 
     &:hover {

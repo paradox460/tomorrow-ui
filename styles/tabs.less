@@ -1,45 +1,52 @@
-@import "ui-variables";
-@import "syntax-variables";
+@import 'ui-variables';
+@import 'syntax-variables';
 
 @modified-icon-width: 8px;
 @tab-bottom-border-height: 8px;
 
 .tab-bar {
-  height: @tab-height + @tab-top-padding;
-  background: @tool-panel-background-color;
   box-sizing: border-box;
+  height: @tab-height + @tab-top-padding;
+
+  background: @tool-panel-background-color;
 
   &.list-inline {
     .tab {
-      padding-left: 12px;
       padding-right: 18px;
+      padding-left: 12px;
     }
   }
 
   .tab {
-    margin-top: @tab-top-padding;
-    height: @tab-height;
     line-height: @tab-height - 5px;
-    color: @text-color;
+
+    height: @tab-height;
+    margin-top: @tab-top-padding;
+
     transition: color .1s ease-in, border-bottom-color 200ms ease-in-out;
+
+    color: @text-color;
     border-top: 1px solid transparent;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
     border-bottom: 0;
     border-bottom-color: fade(lighten(@background-color-info, 20%), 90%);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
 
     .title {
       position: relative;
-      top: 0px;
+      top: 0;
     }
 
     .close-icon {
-      display: block;
-      opacity: 0;
       right: 8px;
-      transform: translate(0,1px) scale(0.8);
-      transform-origin: 50% 50%;
+
+      display: block;
+
       transition: transform 200ms ease, opacity 200ms ease;
+      transform: translate(0,1px) scale(.8);
+      transform-origin: 50% 50%;
+
+      opacity: 0;
 
       &:hover {
         color: @text-color-error !important;
@@ -48,21 +55,26 @@
 
     &.modified {
       &:not(:hover) .close-icon {
-        display: block;
-        right: 12px;
         top: 11px;
+        right: 12px;
+
+        display: block;
+
         width: @modified-icon-width;
         height: @modified-icon-width;
+
         border-width: 2px;
         border-color: #ced2d4;
       }
     }
 
     &.active {
-      z-index: 10;
       line-height: @tab-height - 5px;
-      color: @text-color-highlight;
 
+      z-index: 10;
+
+      color: @text-color-highlight;
+      border-top-color: lighten(@app-background-color, 7%);
       border-bottom: 2px solid fade(@background-color-info, 70%);
 
       &[title] {
@@ -71,8 +83,10 @@
 
       .close-icon {
         line-height: @tab-height -5px;
-        opacity: 1;
+
         transform: translate(0,0) scale(1);
+
+        opacity: 1;
       }
 
       &[title].modified:not(:hover) .close-icon {
@@ -80,14 +94,12 @@
       }
 
       &, &:before {
-        background-color: @input-background-color;
         height: @tab-height;
+
+        background-color: @input-background-color;
       }
 
-      border-top-color: lighten(@app-background-color, 7%);
-
-      &:not([title]),
-      &:not([title]):before {
+      &:not([title]), &:not([title]):before {
         background-color: @input-background-color;
       }
     }
@@ -96,27 +108,29 @@
       color: @text-color-highlight;
     }
     &:first-child {
-      margin-left: 0px;
+      margin-left: 0;
     }
 
     &:hover {
       .close-icon {
-        opacity: 1;
         transform: translate(0,0) scale(1);
+
+        opacity: 1;
       }
     }
 
     .status-ignored {
       color: darken(@text-color, 15%);
     }
-
   }
 
   .placeholder {
     height: @tab-height;
+
     background: linear-gradient(@text-color-info + 50%, @text-color-info);
     &:after {
       top: @tab-height;
+
       background: @text-color-info;
     }
   }

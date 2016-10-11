@@ -1,23 +1,26 @@
-@import "ui-variables";
+@import 'ui-variables';
 
 // Pattern matching; ish is cray.
 // http://lesscss.org/#-pattern-matching-and-guard-expressions
 .text(normal) {
   font-weight: normal;
+
   color: @text-color;
   text-shadow: none;
 }
 .text(subtle) {
   font-weight: normal;
+
   color: @text-color-subtle;
   text-shadow: none;
 }
 .text(highlight) {
   font-weight: normal;
+
   color: @text-color-highlight;
 }
 .text(selected) {
-  .text(highlight)
+  .text(highlight);
 }
 
 .text(info) {
