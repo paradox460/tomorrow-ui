@@ -1,7 +1,7 @@
 {
   "name": "tomorrow-ui",
   "theme": "ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A theme designed to complement tomorrow and base16-tomorrow",
   "license": "MIT",
   "repository": {
